@@ -16,7 +16,7 @@ export async function GET(request) {
 
         // Query for a movie that has the title 'Back to the Future'
         const query = {};
-        const movie = await movies.findOne(query);
+        const movie = await movies.find(query).toArray();
 
         console.log(movie);
         return NextResponse.json({ "a": 34, movie })
